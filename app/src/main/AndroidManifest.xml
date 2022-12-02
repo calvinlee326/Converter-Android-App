@@ -30,10 +30,53 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
         <activity
             android:name=".temp_cal"
             android:exported="true">
+
         </activity>
+
+        <activity
+            android:name=".weight_cal"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".length_cal"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".speed_cal"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".freq_cal"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".volume_cal"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".time_cal"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".area_cal"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".fuel_cal"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>
