@@ -26,7 +26,8 @@ public class temp_cal extends AppCompatActivity {
             "Fahrenheit",
             "Kelvin",
             "Rankine",
-            "Newton", "Delisle"
+            "Newton",
+            "Delisle"
     };
 
     @Override
