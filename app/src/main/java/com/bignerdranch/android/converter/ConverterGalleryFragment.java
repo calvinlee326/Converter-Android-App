@@ -6,9 +6,10 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Fragment {
 
     CardView cv_tmp;
     CardView cv_weight;
@@ -23,9 +24,7 @@ public class MainActivity extends AppCompatActivity {
 //    TextView text;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activty_main);
+    public static ConverterGalleryFragment newInstance() {
 
 
 
