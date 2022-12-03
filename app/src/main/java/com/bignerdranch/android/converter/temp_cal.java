@@ -259,12 +259,13 @@ public class temp_cal extends AppCompatActivity {
     }
 
     private String celciusToDelisle(double celsius) {
-        double delisle = celsius * 0.33000;
+//        double delisle = celsius * 0.33000;
+        double delisle = (100 - celsius) * 3/2;
         return String.valueOf(delisle);
     }
 
     private String celciusToFarenheit(double celsius) {
-        double fahrenheit = (celsius * 9 / 5) + 32;
+        double fahrenheit = (celsius * 1.8) + 32;
         return String.valueOf(fahrenheit);
     }
 
