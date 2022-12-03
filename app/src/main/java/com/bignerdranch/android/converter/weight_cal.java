@@ -1,10 +1,6 @@
 package com.bignerdranch.android.converter;
 
 
-import static com.bignerdranch.android.converter.WeightConversions.conversions;
-import static com.bignerdranch.android.converter.WeightConversions.values;
-
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
@@ -19,44 +15,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.arch.core.util.Function;
 import androidx.cardview.widget.CardView;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
-
-class WeightConversions {
-    private static final String OUNCE  = "OUNCE";
-    private static final String CUP = "CUP";
-    private static final String PINT = "PINT";
-
-    // These are the available weight units
-    public static final String[] values = new String[]{
-            // Important: this list should include all of the variables defined above.
-            OUNCE,
-            CUP,
-            PINT
-    };
-
-    static List<Conversion> conversions = new ArrayList<>(Arrays.asList(
-            new Conversion(PINT, CUP, (Double x) -> x * 2),
-            // In 1 PINT there are 2 CUP
-            // So with x PINT return that the number of CUP is x * 2
-
-            // Again, there are 2 CUP in 1 PINT
-            // If you have x CUP, then the number of PINT you have is x / 2
-            new Conversion(CUP, PINT, (Double x) -> x / 2),
-
-            new Conversion(CUP, OUNCE, (Double x) -> x * 8),
-            new Conversion(OUNCE, CUP, (Double x) -> x / 8)
-
-    ));
-}
 
 public class weight_cal extends AppCompatActivity {
+    // The weight conversions are defined in the "WeightConversions" file.
+    WeightConversions weightConversions = new WeightConversions();
+    // user-inputted values can be added to the "values" and "conversions" attributes of the
+    // variable above to allow the user to define new conversions.
 
     CardView cv_fromUnit, cv_toUnit, cv_convert;
     RelativeLayout mCLayout;
-    String fromUnit = values[0];
-    String toUnit = values[1];
+    String fromUnit = weightConversions.values[0];
+    String toUnit = weightConversions.values[1];
     TextView tv_fromUnit, tv_toUnit;
     EditText et_fromUnit, et_toUnit;
 
@@ -75,8 +45,8 @@ public class weight_cal extends AppCompatActivity {
         tv_fromUnit = findViewById(R.id.tv_fromUnit);
         tv_toUnit = findViewById(R.id.tv_toUnit);
 
-        tv_fromUnit.setText(values[0]);
-        tv_toUnit.setText(values[1]);
+        tv_fromUnit.setText(weightConversions.values[0]);
+        tv_toUnit.setText(weightConversions.values[1]);
 
         et_fromUnit = findViewById(R.id.et_fromUnit);
         et_toUnit = findViewById(R.id.et_toUnit);
@@ -94,7 +64,7 @@ public class weight_cal extends AppCompatActivity {
                     Function<Double, Double> conversionFunction = (Double x) -> {
                         throw new RuntimeException("No conversion was found for these units");
                     };
-                    for (Conversion c : conversions) {
+                    for (Conversion c : weightConversions.conversions) {
                         if (c.startUnit == startUnit && c.endUnit == endUnit) {
                             conversionFunction = c.conversionFunction;
                             break;
@@ -126,7 +96,7 @@ public class weight_cal extends AppCompatActivity {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(weight_cal.this);
                 builder.setTitle("choose Unit");
 
-                final String[] flowers = values;
+                final String[] flowers = weightConversions.values;
 
                 builder.setSingleChoiceItems(
                         flowers, // Items list
@@ -167,7 +137,7 @@ public class weight_cal extends AppCompatActivity {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(weight_cal.this);
                 builder.setTitle("choose Unit");
 
-                final String[] flowers = values;
+                final String[] flowers = weightConversions.values;
 
                 builder.setSingleChoiceItems(
                         flowers, // Items list
