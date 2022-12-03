@@ -70,7 +70,7 @@ public class weight_cal extends AppCompatActivity {
         cv_toUnit = findViewById(R.id.toUnit);
         cv_convert = findViewById(R.id.cv_convert);
 
-        mCLayout = findViewById(R.id.temp_relativeLayout);
+        mCLayout = findViewById(R.id.weight_relativelayout);
 
         tv_fromUnit = findViewById(R.id.tv_fromUnit);
         tv_toUnit = findViewById(R.id.tv_toUnit);
