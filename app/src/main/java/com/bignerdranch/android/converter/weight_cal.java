@@ -100,6 +100,9 @@ public class weight_cal extends AppCompatActivity {
                             break;
                         }
                     }
+                    if (startUnit == endUnit) {
+                        conversionFunction = (Double x) -> x; // output the input, no conversion.
+                    }
                     Double startValue = Double.parseDouble(tempInput);
                     try {
                         Double endValue = conversionFunction.apply(startValue);
