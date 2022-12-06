@@ -33,7 +33,7 @@ public class temp_cal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.temp_cal);
+        setContentView(R.layout.activity_temp_cal);
 
         cv_fromUnit = findViewById(R.id.fromUnit);
         cv_toUnit = findViewById(R.id.toUnit);
