@@ -17,12 +17,12 @@ public class temp_cal extends AppCompatActivity {
 
     CardView cv_fromUnit, cv_toUnit, cv_convert;
     RelativeLayout mCLayout;
-    String fromUnit = "Celcius";
-    String toUnit = "Farenheit";
+    String fromUnit = "Celsius";
+    String toUnit = "Fahrenheit";
     TextView tv_fromUnit, tv_toUnit;
     EditText et_fromUnit, et_toUnit;
     final String[] values = new String[]{
-            "Celcius",
+            "Celsius",
             "Fahrenheit",
             "Kelvin",
             "Rankine",
@@ -61,19 +61,19 @@ public class temp_cal extends AppCompatActivity {
                         if (tv_toUnit.getText().toString().equals(values[0])) {
                             et_toUnit.setText(tempInput);
                         } else if (tv_toUnit.getText().toString().equals(values[1])) {
-                            et_toUnit.setText(celciusToFarenheit(Double.parseDouble(tempInput)));
+                            et_toUnit.setText(celsiusToFarenheit(Double.parseDouble(tempInput)));
                         } else if (tv_toUnit.getText().toString().equals(values[2])) {
-                            et_toUnit.setText(celciusToKelvin(Double.parseDouble(tempInput)));
+                            et_toUnit.setText(celsiusToKelvin(Double.parseDouble(tempInput)));
                         } else if (tv_toUnit.getText().toString().equals(values[3])) {
-                            et_toUnit.setText(celciusToRankine(Double.parseDouble(tempInput)));
+                            et_toUnit.setText(celsiusToRankine(Double.parseDouble(tempInput)));
                         } else if (tv_toUnit.getText().toString().equals(values[4])) {
-                            et_toUnit.setText(celciusToNewton(Double.parseDouble(tempInput)));
+                            et_toUnit.setText(celsiusToNewton(Double.parseDouble(tempInput)));
                         } else if (tv_toUnit.getText().toString().equals(values[5])) {
-                            et_toUnit.setText(celciusToDelisle(Double.parseDouble(tempInput)));
+                            et_toUnit.setText(celsiusToDelisle(Double.parseDouble(tempInput)));
                         }
                     } else if (tv_fromUnit.getText().toString().equals(values[1])) {
                         if (tv_toUnit.getText().toString().equals(values[0])) {
-                            et_toUnit.setText(fahrenheitToCelcius(Double.parseDouble(tempInput)));
+                            et_toUnit.setText(fahrenheitToCelsius(Double.parseDouble(tempInput)));
                         } else if (tv_toUnit.getText().toString().equals(values[1])) {
                             et_toUnit.setText(tempInput);
                         } else if (tv_toUnit.getText().toString().equals(values[2])) {
@@ -87,7 +87,7 @@ public class temp_cal extends AppCompatActivity {
                         }
                     } else if (tv_fromUnit.getText().toString().equals(values[2])) {
                         if (tv_toUnit.getText().toString().equals(values[0])) {
-                            et_toUnit.setText(kelvinToCelcius(Double.parseDouble(tempInput)));
+                            et_toUnit.setText(kelvinToCelsius(Double.parseDouble(tempInput)));
                         } else if (tv_toUnit.getText().toString().equals(values[1])) {
                             et_toUnit.setText(kelvinToFahrenheit(Double.parseDouble(tempInput)));
                         } else if (tv_toUnit.getText().toString().equals(values[2])) {
@@ -101,7 +101,7 @@ public class temp_cal extends AppCompatActivity {
                         }
                     } else if (tv_fromUnit.getText().toString().equals(values[3])) {
                         if (tv_toUnit.getText().toString().equals(values[0])) {
-                            et_toUnit.setText(rankineToCelcius(Double.parseDouble(tempInput)));
+                            et_toUnit.setText(rankineToCelsius(Double.parseDouble(tempInput)));
                         } else if (tv_toUnit.getText().toString().equals(values[1])) {
                             et_toUnit.setText(rankineToFahrenheit(Double.parseDouble(tempInput)));
                         } else if (tv_toUnit.getText().toString().equals(values[2])) {
@@ -115,7 +115,7 @@ public class temp_cal extends AppCompatActivity {
                         }
                     } else if (tv_fromUnit.getText().toString().equals(values[4])) {
                         if (tv_toUnit.getText().toString().equals(values[0])) {
-                            et_toUnit.setText(newtonToCelcius(Double.parseDouble(tempInput)));
+                            et_toUnit.setText(newtonToCelsius(Double.parseDouble(tempInput)));
                         } else if (tv_toUnit.getText().toString().equals(values[1])) {
                             et_toUnit.setText(newtonToFahrenheit(Double.parseDouble(tempInput)));
                         } else if (tv_toUnit.getText().toString().equals(values[2])) {
@@ -129,7 +129,7 @@ public class temp_cal extends AppCompatActivity {
                         }
                     } else if (tv_fromUnit.getText().toString().equals(values[5])) {
                         if (tv_toUnit.getText().toString().equals(values[0])) {
-                            et_toUnit.setText(delisleToCelcius(Double.parseDouble(tempInput)));
+                            et_toUnit.setText(delisleToCelsius(Double.parseDouble(tempInput)));
                         } else if (tv_toUnit.getText().toString().equals(values[1])) {
                             et_toUnit.setText(delisleToFahrenheit(Double.parseDouble(tempInput)));
                         } else if (tv_toUnit.getText().toString().equals(values[2])) {
@@ -154,7 +154,7 @@ public class temp_cal extends AppCompatActivity {
                 builder.setTitle("choose Unit");
 
                 final String[] flowers = new String[]{
-                        "Celcius",
+                        "Celsius",
                         "Fahrenheit",
                         "Kelvin",
                         "Rankine",
@@ -201,7 +201,7 @@ public class temp_cal extends AppCompatActivity {
                 builder.setTitle("choose Unit");
 
                 final String[] flowers = new String[]{
-                        "Celcius",
+                        "Celsius",
                         "Fahrenheit",
                         "Kelvin",
                         "Rankine",
@@ -243,28 +243,28 @@ public class temp_cal extends AppCompatActivity {
     }
 
     //celcius
-    private String celciusToKelvin(double celsius) {
+    private String celsiusToKelvin(double celsius) {
         double kelvin = celsius + 273.15;
         return String.valueOf(kelvin);
     }
 
-    private String celciusToRankine(double celsius) {
+    private String celsiusToRankine(double celsius) {
         double rankine = celsius * 1.8 + 32 + 459.67;
         return String.valueOf(rankine);
     }
 
-    private String celciusToNewton(double celsius) {
+    private String celsiusToNewton(double celsius) {
         double newton = celsius * 0.33000;
         return String.valueOf(newton);
     }
 
-    private String celciusToDelisle(double celsius) {
+    private String celsiusToDelisle(double celsius) {
 //        double delisle = celsius * 0.33000;
         double delisle = (100 - celsius) * 3/2;
         return String.valueOf(delisle);
     }
 
-    private String celciusToFarenheit(double celsius) {
+    private String celsiusToFarenheit(double celsius) {
         double fahrenheit = (celsius * 1.8) + 32;
         return String.valueOf(fahrenheit);
     }
@@ -290,7 +290,7 @@ public class temp_cal extends AppCompatActivity {
         return String.valueOf(delisle);
     }
 
-    private String fahrenheitToCelcius(double fahrenheit) {
+    private String fahrenheitToCelsius(double fahrenheit) {
         double celcius = (fahrenheit - 32) * 5 / 9;
         return String.valueOf(celcius);
     }
@@ -311,7 +311,7 @@ public class temp_cal extends AppCompatActivity {
         return String.valueOf(delisle);
     }
 
-    private String kelvinToCelcius(double kelvin) {
+    private String kelvinToCelsius(double kelvin) {
         double celcius = kelvin - 273.15;
         return String.valueOf(celcius);
     }
@@ -332,7 +332,7 @@ public class temp_cal extends AppCompatActivity {
         return String.valueOf(delisle);
     }
 
-    private String rankineToCelcius(double rankine) {
+    private String rankineToCelsius(double rankine) {
         double celcius = (rankine - 491.67) * 5 / 9;
         return String.valueOf(celcius);
     }
@@ -353,7 +353,7 @@ public class temp_cal extends AppCompatActivity {
         return String.valueOf(delisle);
     }
 
-    private String newtonToCelcius(double newton) {
+    private String newtonToCelsius(double newton) {
         double celcius = newton * 100 / 33;
         return String.valueOf(celcius);
     }
@@ -374,7 +374,7 @@ public class temp_cal extends AppCompatActivity {
     }
 
     //Delisle
-    private String delisleToCelcius(double delisle) {
+    private String delisleToCelsius(double delisle) {
         double celcius = 100 - delisle * 2 / 3;
         return String.valueOf(celcius);
     }

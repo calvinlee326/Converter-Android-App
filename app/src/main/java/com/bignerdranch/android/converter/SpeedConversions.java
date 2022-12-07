@@ -5,8 +5,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SpeedConversions {
-    public static final String FOOT_PER_HOUR = "FOOT_PER_HOUR";
-    public static final String MILE_PER_HOUR = "MILE_PER_HOUR";
+    public static final String FOOT_PER_HOUR = "Feet Per Hour";
+    public static final String MILE_PER_HOUR = "Miles Per Hour";
 
     // These are the available weight units
     public String[] values = new String[]{

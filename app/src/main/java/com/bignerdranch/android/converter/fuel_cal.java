@@ -34,8 +34,8 @@ public class fuel_cal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.length_cal);
-        mCLayout = findViewById(R.id.length_relativelayout);
+        setContentView(R.layout.fuel_cal);
+        mCLayout = findViewById(R.id.fuel_relativeLayout);
 
         cv_fromUnit = findViewById(R.id.fromUnit);
         cv_toUnit = findViewById(R.id.toUnit);

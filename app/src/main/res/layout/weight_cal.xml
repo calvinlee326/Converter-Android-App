@@ -30,7 +30,7 @@
             android:layout_height="40dp"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="40dp"
-            android:src="@drawable/temperature" />
+            android:src="@drawable/weight" />
 
     </LinearLayout>
 
@@ -66,7 +66,7 @@
                 android:id="@+id/tv_fromUnit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Celcius"
+                android:text="Celsius"
                 android:textAlignment="center"
                 android:textColor="@color/textColor"
                 android:textSize="16sp" />

@@ -34,8 +34,8 @@ public class volume_cal extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.length_cal);
-        mCLayout = findViewById(R.id.length_relativelayout);
+        setContentView(R.layout.volume_cal);
+        mCLayout = findViewById(R.id.volume_relativeLayout);
 
         cv_fromUnit = findViewById(R.id.fromUnit);
         cv_toUnit = findViewById(R.id.toUnit);
