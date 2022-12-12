@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     CardView cv_time;
     CardView cv_area;
     CardView cv_fuel;
-    CardView cv_freq;
+    CardView cv_curr;
 
 //    TextView text;
 
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         cv_time = findViewById(R.id.cv_time);
         cv_area = findViewById(R.id.cv_area);
         cv_fuel = findViewById(R.id.cv_fuel);
-        cv_freq = findViewById(R.id.cv_frequency);
+        cv_curr = findViewById(R.id.cv_currency);
 
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
@@ -89,10 +89,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, fuel_cal.class));
             }
         });
-        cv_freq.setOnClickListener(new View.OnClickListener() {
+        cv_curr.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, freq_cal.class));
+                startActivity(new Intent(MainActivity.this, currency_cal.class));
             }
         });
 
