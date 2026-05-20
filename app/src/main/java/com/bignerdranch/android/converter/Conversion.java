@@ -5,9 +5,9 @@ import androidx.arch.core.util.Function;
 
 public class Conversion {
 
-    public String startUnit;
-    public String endUnit;
-    public Function<Double, Double> conversionFunction;
+    public final String startUnit;
+    public final String endUnit;
+    public final Function<Double, Double> conversionFunction;
 
     public Conversion(
             String startUnit,

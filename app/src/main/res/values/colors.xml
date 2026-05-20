@@ -1,18 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Space dark palette (iOS 26 tinted + SpaceX) -->
+    <color name="space_black">#000000</color>
+    <color name="space_surface">#1C1C1E</color>
+    <color name="space_surface_elevated">#2C2C2E</color>
+    <color name="space_surface_hover">#3A3A3C</color>
+    <color name="space_border">#38383A</color>
+    <color name="space_border_subtle">#2C2C2E</color>
+
+    <color name="space_text_primary">#FFFFFF</color>
+    <color name="space_text_secondary">#8E8E93</color>
+    <color name="space_text_tertiary">#636366</color>
+
+    <color name="space_accent">#FFFFFF</color>
+    <color name="space_accent_dim">#D1D1D6</color>
+
+    <!-- Category accent colors (muted/desaturated for dark theme luxury feel) -->
+    <color name="card_temperature">#FF6B4A</color>
+    <color name="card_weight">#5AC8FA</color>
+    <color name="card_length">#30D158</color>
+    <color name="card_speed">#BF5AF2</color>
+    <color name="card_currency">#FFD60A</color>
+    <color name="card_volume">#64D2FF</color>
+    <color name="card_time">#FF6482</color>
+    <color name="card_area">#5E5CE6</color>
+    <color name="card_fuel">#FF453A</color>
+
+    <!-- Compat names so existing layouts/themes don't break -->
+    <color name="background">@color/space_black</color>
+    <color name="background2">@color/space_surface</color>
+    <color name="textColor">@color/space_text_primary</color>
+    <color name="hintColor">@color/space_text_tertiary</color>
+    <color name="grey">@color/space_text_secondary</color>
+    <color name="selectunit">@color/space_surface_elevated</color>
+    <color name="convertUnit">@color/space_accent</color>
+    <color name="splash_bg">@color/space_black</color>
+    <color name="ios_bg">@color/space_black</color>
+    <color name="ios_card_surface">@color/space_surface</color>
+    <color name="ios_text_primary">@color/space_text_primary</color>
+    <color name="ios_text_secondary">@color/space_text_secondary</color>
+
+    <!-- Legacy Material theme attrs -->
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
-    <color name="grey">#808080</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="hintColor">#808080</color>
-    <color name="background">#FFFFFFFF</color>
-    <color name="background2">#FFFFFFFF</color>
-    <color name="textColor">#FF000000</color>
-
-    <color name="selectunit">#2a54f4</color>
-    <color name="convertUnit">#1ac831</color>
 </resources>

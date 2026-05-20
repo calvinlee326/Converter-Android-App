@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +23,6 @@ public class freq_cal extends AppCompatActivity {
     // variable above to allow the user to define new conversions.
 
     CardView cv_fromUnit, cv_toUnit, cv_convert;
-    RelativeLayout mCLayout;
     String fromUnit = frequencyConversions.values[0];
     String toUnit = frequencyConversions.values[1];
     TextView tv_fromUnit, tv_toUnit;
@@ -35,7 +33,6 @@ public class freq_cal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.freq_cal);
-        mCLayout = findViewById(R.id.freq_relativeLayout);
 
         cv_fromUnit = findViewById(R.id.fromUnit);
         cv_toUnit = findViewById(R.id.toUnit);
@@ -56,7 +53,7 @@ public class freq_cal extends AppCompatActivity {
             public void onClick(View v) {
                 String tempInput = et_fromUnit.getText().toString();
 
-                if (tempInput.equals("") || tempInput == null) {
+                if (tempInput == null || tempInput.isEmpty()) {
                     et_fromUnit.setError("Please enter some value");
                 } else {
                     String startUnit = tv_fromUnit.getText().toString();
@@ -65,12 +62,12 @@ public class freq_cal extends AppCompatActivity {
                         throw new RuntimeException("No conversion was found for these units");
                     };
                     for (Conversion c : frequencyConversions.conversions) {
-                        if (c.startUnit == startUnit && c.endUnit == endUnit) {
+                        if (c.startUnit.equals(startUnit) && c.endUnit.equals(endUnit)) {
                             conversionFunction = c.conversionFunction;
                             break;
                         }
                     }
-                    if (startUnit == endUnit) {
+                    if (startUnit.equals(endUnit)) {
                         conversionFunction = (Double x) -> x; // output the input, no conversion.
                     }
                     Double startValue = Double.parseDouble(tempInput);

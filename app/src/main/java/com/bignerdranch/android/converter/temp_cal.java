@@ -4,7 +4,6 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AlertDialog;
@@ -16,7 +15,6 @@ import java.util.Arrays;
 public class temp_cal extends AppCompatActivity {
 
     CardView cv_fromUnit, cv_toUnit, cv_convert;
-    RelativeLayout mCLayout;
     String fromUnit = "Celsius";
     String toUnit = "Fahrenheit";
     TextView tv_fromUnit, tv_toUnit;
@@ -39,13 +37,11 @@ public class temp_cal extends AppCompatActivity {
         cv_toUnit = findViewById(R.id.toUnit);
         cv_convert = findViewById(R.id.cv_convert);
 
-        mCLayout = findViewById(R.id.temp_relativeLayout);
-
         tv_fromUnit = findViewById(R.id.tv_fromUnit);
         tv_toUnit = findViewById(R.id.tv_toUnit);
 
         tv_fromUnit.setText(values[0]);
-        tv_toUnit.setText(values[0]);
+        tv_toUnit.setText(values[1]);
 
         et_fromUnit = findViewById(R.id.et_fromUnit);
         et_toUnit = findViewById(R.id.et_toUnit);
@@ -54,7 +50,7 @@ public class temp_cal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String tempInput = et_fromUnit.getText().toString();
-                if (tempInput.equals("") || tempInput == null) {
+                if (tempInput == null || tempInput.isEmpty()) {
                     et_fromUnit.setError("Please enter some value");
                 } else {
                     if (tv_fromUnit.getText().toString().equals(values[0])) {
@@ -271,7 +267,7 @@ public class temp_cal extends AppCompatActivity {
 
     //fahrenheit
     private String fahrenheitToKelvin(double fahrenheit) {
-        double kelvin = 273.5 + ((fahrenheit - 32.0) * (5.0 / 9.0));
+        double kelvin = 273.15 + ((fahrenheit - 32.0) * (5.0 / 9.0));
         return String.valueOf(kelvin);
     }
 

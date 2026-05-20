@@ -3,11 +3,9 @@ package com.bignerdranch.android.converter;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.hardware.Camera;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +23,6 @@ public class area_cal extends AppCompatActivity {
     // variable above to allow the user to define new conversions.
 
     CardView cv_fromUnit, cv_toUnit, cv_convert;
-    RelativeLayout mCLayout;
     String fromUnit = areaConversions.values[0];
     String toUnit = areaConversions.values[1];
     TextView tv_fromUnit, tv_toUnit;
@@ -36,7 +33,6 @@ public class area_cal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.area_cal);
-        mCLayout = findViewById(R.id.area_relativeLayout);
 
         cv_fromUnit = findViewById(R.id.fromUnit);
         cv_toUnit = findViewById(R.id.toUnit);
@@ -57,7 +53,7 @@ public class area_cal extends AppCompatActivity {
             public void onClick(View v) {
                 String tempInput = et_fromUnit.getText().toString();
 
-                if (tempInput.equals("") || tempInput == null) {
+                if (tempInput == null || tempInput.isEmpty()) {
                     et_fromUnit.setError("Please enter some value");
                 } else {
                     String startUnit = tv_fromUnit.getText().toString();
@@ -66,12 +62,12 @@ public class area_cal extends AppCompatActivity {
                         throw new RuntimeException("No conversion was found for these units");
                     };
                     for (Conversion c : areaConversions.conversions) {
-                        if (c.startUnit == startUnit && c.endUnit == endUnit) {
+                        if (c.startUnit.equals(startUnit) && c.endUnit.equals(endUnit)) {
                             conversionFunction = c.conversionFunction;
                             break;
                         }
                     }
-                    if (startUnit == endUnit) {
+                    if (startUnit.equals(endUnit)) {
                         conversionFunction = (Double x) -> x; // output the input, no conversion.
                     }
                     Double startValue = Double.parseDouble(tempInput);

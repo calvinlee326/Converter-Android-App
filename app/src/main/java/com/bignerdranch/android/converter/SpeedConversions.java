@@ -5,45 +5,41 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SpeedConversions {
-    public static final String MILE_PER_HOUR = "Miles Per Hour";
-    public static final String KILOMETERS_PER_HOUR = "Kilometers Per Hour";
-    public static final String METER_PER_HOUR = "Meter Per Hour";
-    public static final String CENTIMETER_PER_HOUR = "Centimeter Per Hour";
-    public static final String METER_PER_SECOND = "Meter Per Second";
+    public static final String MPH  = "Miles per Hour";
+    public static final String KPH  = "Kilometers per Hour";
+    public static final String MPS  = "Meters per Second";
+    public static final String FPS  = "Feet per Second";
+    public static final String KNOT = "Knot";
 
-    // These are the available weight units
     public String[] values = new String[]{
-            // Important: this list should include all of the variables defined above.
-            MILE_PER_HOUR,
-            KILOMETERS_PER_HOUR,
-            METER_PER_HOUR,
-            CENTIMETER_PER_HOUR,
-            METER_PER_SECOND
-
+            KPH, MPH, MPS, FPS, KNOT
     };
 
     public List<Conversion> conversions = new ArrayList<>(Arrays.asList(
-            new Conversion(CENTIMETER_PER_HOUR, METER_PER_HOUR , (Double x) -> x * 0.01),
-            new Conversion(CENTIMETER_PER_HOUR, KILOMETERS_PER_HOUR, (Double x) -> x * 0.00001),
-            new Conversion(CENTIMETER_PER_HOUR, MILE_PER_HOUR, (Double x) -> x * 0.00000621),
-            new Conversion(CENTIMETER_PER_HOUR, METER_PER_SECOND, (Double x) -> x * 0.000002778),
-            new Conversion(METER_PER_HOUR, CENTIMETER_PER_HOUR, (Double x) -> x * 100),
-            new Conversion(METER_PER_HOUR, KILOMETERS_PER_HOUR, (Double x) -> x * 0.001),
-            new Conversion(METER_PER_HOUR, MILE_PER_HOUR, (Double x) -> x * 0.00062137),
-            new Conversion(METER_PER_HOUR, METER_PER_SECOND, (Double x) -> x * 0.0002778),
-            new Conversion(KILOMETERS_PER_HOUR, CENTIMETER_PER_HOUR, (Double x) -> x * 100000),
-            new Conversion(KILOMETERS_PER_HOUR, METER_PER_HOUR, (Double x) -> x * 1000),
-            new Conversion(KILOMETERS_PER_HOUR, MILE_PER_HOUR, (Double x) -> x * 0.62137119),
-            new Conversion(KILOMETERS_PER_HOUR, METER_PER_SECOND, (Double x) -> x * 0.27777778),
-            new Conversion(MILE_PER_HOUR, CENTIMETER_PER_HOUR, (Double x) -> x * 160934.4),
-            new Conversion(MILE_PER_HOUR, KILOMETERS_PER_HOUR, (Double x) -> x * 1.609344),
-            new Conversion(MILE_PER_HOUR, METER_PER_HOUR, (Double x) -> x * 1609.344),
-            new Conversion(MILE_PER_HOUR, METER_PER_SECOND, (Double x) -> x * 0.44704),
-            new Conversion(METER_PER_SECOND, CENTIMETER_PER_HOUR, (Double x) -> x * 360000),
-            new Conversion(METER_PER_SECOND, METER_PER_HOUR, (Double x) -> x * 3600),
-            new Conversion(METER_PER_SECOND, KILOMETERS_PER_HOUR, (Double x) -> x * 3.6),
-            new Conversion(METER_PER_SECOND, MILE_PER_HOUR, (Double x) -> x * 2.23693629)
+            new Conversion(MPH, KPH,  (Double x) -> x * 1.609344),
+            new Conversion(MPH, MPS,  (Double x) -> x * 0.44704),
+            new Conversion(MPH, FPS,  (Double x) -> x * 1.466667),
+            new Conversion(MPH, KNOT, (Double x) -> x * 0.868976),
 
+            new Conversion(KPH, MPH,  (Double x) -> x * 0.621371),
+            new Conversion(KPH, MPS,  (Double x) -> x * 0.277778),
+            new Conversion(KPH, FPS,  (Double x) -> x * 0.911344),
+            new Conversion(KPH, KNOT, (Double x) -> x * 0.539957),
+
+            new Conversion(MPS, MPH,  (Double x) -> x * 2.236936),
+            new Conversion(MPS, KPH,  (Double x) -> x * 3.6),
+            new Conversion(MPS, FPS,  (Double x) -> x * 3.28084),
+            new Conversion(MPS, KNOT, (Double x) -> x * 1.943844),
+
+            new Conversion(FPS, MPH,  (Double x) -> x * 0.681818),
+            new Conversion(FPS, KPH,  (Double x) -> x * 1.09728),
+            new Conversion(FPS, MPS,  (Double x) -> x * 0.3048),
+            new Conversion(FPS, KNOT, (Double x) -> x * 0.592484),
+
+            new Conversion(KNOT, MPH, (Double x) -> x * 1.150779),
+            new Conversion(KNOT, KPH, (Double x) -> x * 1.852),
+            new Conversion(KNOT, MPS, (Double x) -> x * 0.514444),
+            new Conversion(KNOT, FPS, (Double x) -> x * 1.687810)
     ));
 
     public SpeedConversions() {}
