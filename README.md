@@ -17,13 +17,10 @@ An Android unit converter app supporting 10 conversion categories, including liv
 
 ## Screenshots
 
-<img width="345" alt="Screenshot 2024-09-11 at 12 12 03 PM" src="https://github.com/user-attachments/assets/f500ae5f-435c-4c0d-b976-a2a377c405a3">
+<img width="294" height="613" alt="Screenshot 2026-05-19 at 6 14 31 PM" src="https://github.com/user-attachments/assets/3d450653-76f9-4060-b8df-fbd9990dadfe" />
+<img width="294" height="613" alt="Screenshot 2026-05-19 at 6 11 32 PM" src="https://github.com/user-attachments/assets/7cd732c5-4d1e-49da-b153-96f62a34086a" />
+<img width="294" height="613" alt="Screenshot 2026-05-19 at 6 14 44 PM" src="https://github.com/user-attachments/assets/5bdc3395-0e4b-4211-b928-ac3e0f68bf80" />
 
-<img width="345" alt="Screenshot 2024-09-11 at 12 12 42 PM" src="https://github.com/user-attachments/assets/203af25c-81c5-44c8-819f-868a7916f80c">
-
-<img width="273" alt="Screenshot 2024-09-11 at 12 13 04 PM" src="https://github.com/user-attachments/assets/c51436e9-fd9e-4aa7-98ed-b795e643da8e">
-
-<img width="296" alt="Screenshot 2024-09-11 at 12 13 28 PM" src="https://github.com/user-attachments/assets/157f097e-d4be-402a-a1f0-af9e214d44b3">
 
 ## Tech Stack
 
